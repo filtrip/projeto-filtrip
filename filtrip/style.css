@@ -1,0 +1,434 @@
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #080609;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho {
+    background-color: #19003f;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    color: #ffd21c;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu a {
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #ffd21c;
+}
+
+
+/* PESQUISA */
+
+.pesquisa {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.pesquisa input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 150px;
+}
+
+.pesquisa button {
+    border: none;
+    background-color: #ffd21c;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+/* BANNER */
+
+.banner {
+    min-height: 380px;
+    background: linear-gradient(90deg, #19003f, #35166a);
+    display: flex;
+    align-items: center;
+    padding: 50px 8%;
+}
+
+.banner-conteudo {
+    max-width: 550px;
+}
+
+.destaque {
+    color: #ffd21c;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.banner h1 {
+    font-size: 42px;
+    margin: 20px 0;
+}
+
+.banner p {
+    color: #dddddd;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.botao-principal {
+    display: inline-block;
+    background-color: #ffd21c;
+    color: #19003f;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botao-principal:hover {
+    background-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+
+/* FILTROS */
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 25px;
+}
+
+.filtro {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffd21c;
+    border-radius: 20px;
+    padding: 9px 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtro:hover,
+.filtro.ativo {
+    background-color: #ffd21c;
+    color: #19003f;
+}
+
+
+/* SEÇÃO DE FILMES */
+
+.secao-filmes {
+    padding: 25px 5%;
+}
+
+.titulo-populares {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo-populares h2 {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.titulo-populares p {
+    color: #ffd21c;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.lista-filmes {
+    background-color: #281052;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+/* CARTÕES */
+
+.card-filme {
+    width: 180px;
+    background-color: #ffffff;
+    color: #171717;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.card-filme:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 20px rgba(255, 210, 28, 0.2);
+}
+
+.card-filme img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.informacoes-filme {
+    padding: 10px;
+}
+
+.informacoes-filme h3 {
+    font-size: 13px;
+    min-height: 32px;
+    margin-bottom: 5px;
+}
+
+.informacoes-filme p {
+    color: #d32f2f;
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+.informacoes-filme span {
+    display: block;
+    font-size: 10px;
+    color: #777777;
+}
+
+.informacoes-filme strong {
+    display: block;
+    font-size: 23px;
+    color: #19003f;
+    margin-top: 3px;
+}
+
+
+/* CATEGORIAS */
+
+.categoria {
+    margin-top: 45px;
+}
+
+.titulo-categoria {
+    padding: 15px 5%;
+}
+
+.titulo-categoria h2 {
+    font-size: 28px;
+}
+
+.titulo-categoria p {
+    color: #ffd21c;
+    font-size: 13px;
+}
+
+
+/* SOBRE NÓS */
+
+.sobre {
+    padding: 70px 10%;
+    background-color: #19003f;
+    text-align: center;
+}
+
+.sobre h2 {
+    color: #ffd21c;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.sobre p {
+    max-width: 750px;
+    margin: 12px auto;
+    line-height: 1.8;
+    color: #eeeeee;
+}
+
+
+/* CONTATO */
+
+.contato {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contato h2 {
+    font-size: 30px;
+    color: #ffd21c;
+    margin-bottom: 12px;
+}
+
+.contato > p {
+    margin-bottom: 25px;
+}
+
+.contato form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contato input,
+.contato textarea {
+    padding: 14px;
+    border: 1px solid #5c3b89;
+    border-radius: 8px;
+    background-color: #1a1223;
+    color: #ffffff;
+    font-family: inherit;
+    outline: none;
+}
+
+.contato input:focus,
+.contato textarea:focus {
+    border-color: #ffd21c;
+}
+
+.contato textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contato button {
+    background-color: #ffd21c;
+    color: #19003f;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contato button:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+/* RODAPÉ */
+
+.rodape {
+    background-color: #19003f;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.rodape h2 {
+    color: #ffd21c;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.rodape p {
+    font-size: 13px;
+    margin-top: 10px;
+    color: #dddddd;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+
+    .cabecalho {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .banner {
+        min-height: 300px;
+        padding: 35px 7%;
+    }
+
+    .banner h1 {
+        font-size: 30px;
+    }
+
+    .lista-filmes {
+        padding: 20px 10px;
+        gap: 12px;
+    }
+
+    .card-filme {
+        width: 145px;
+    }
+
+    .card-filme img {
+        height: 190px;
+    }
+
+    .titulo-categoria h2 {
+        font-size: 24px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .pesquisa input {
+        width: 180px;
+    }
+
+    .banner h1 {
+        font-size: 25px;
+    }
+
+    .card-filme {
+        width: 135px;
+    }
+
+    .card-filme img {
+        height: 175px;
+    }
+
+}
