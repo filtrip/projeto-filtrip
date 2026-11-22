@@ -1,28 +1,484 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Filtrip - Descubra destinos de filmes e séries pelo mundo.">
+
+    <meta name="description" content="Filtrip: conheça destinos e lugares que fizeram parte dos seus filmes favoritos.">
+
     <title>Filtrip | Turismo Cinematográfico</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
 
-    <header>
-        
+    <!-- CABEÇALHO -->
+            <header class="cabecalho">
+
+        <a href="#inicio" class="logo">
+            <img src="imagens/logo.png" alt="Filtrip">
+        </a>
+
+        <nav class="menu">
+            <a href="#inicio">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd21c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/>
+                    <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                </svg>
+                Início
+            </a>
+
+            <a href="#populares">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd21c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+                </svg>
+                Voos
+            </a>
+
+            <a href="#categorias">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd21c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/>
+                    <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/>
+                    <path d="M12 4v6"/>
+                    <path d="M2 18h20"/>
+                </svg>
+                Hospedagens
+            </a>
+
+            <a href="#sobre">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd21c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 16v-4"/>
+                    <path d="M12 8h.01"/>
+                </svg>
+                Sobre Nós
+            </a>
+
+            <a href="#contato">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd21c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                Contato
+            </a>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="text" id="campoPesquisa" placeholder="Pesquise por filmes, locais, hospedagens...">
+            <button id="botaoPesquisa" aria-label="Pesquisar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#19003f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="acoes">
+
+            <a href="#" class="botao-icone" aria-label="Meu perfil" title="Meu perfil">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd21c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </a>
+
+            <button type="button" class="botao-icone" id="botaoMenu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuLateral">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd21c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="4" y1="6" x2="20" y2="6"/>
+                    <line x1="4" y1="12" x2="20" y2="12"/>
+                    <line x1="4" y1="18" x2="20" y2="18"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <div class="menu-lateral" id="menuLateral">
+            <a href="#inicio">Início</a>
+            <a href="#populares">Voos</a>
+            <a href="#categorias">Hospedagens</a>
+            <a href="#sobre">Sobre Nós</a>
+            <a href="#contato">Contato</a>
+            <a href="#">Meu perfil</a>
+        </div>
+
     </header>
 
+    <!-- CONTEÚDO PRINCIPAL -->
     <main>
+
+        <!-- BANNER PRINCIPAL -->
+        <section class="banner" id="inicio">
+
+            <div class="banner-conteudo">
+
+                <span class="destaque">DESTAQUE</span>
+
+                <h1>BRILHO ETERNO DE UMA MENTE SEM LEMBRANÇAS</h1>
+
+                <p>
+                    Após um término doloroso, Joel Barish descobre que sua ex-namorada, Clementine, apagou todas as lembranças dele da mente usando um procedimento experimental da clínica Lacuna.
+                </p>
+
+                <a href="#populares" class="botao-principal">
+                    ▶ Viajar 
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FILMES POPULARES -->
+        <section class="secao-filmes" id="populares">
+
+            <div class="titulo-populares">
+                <h2>Populares</h2>
+                <p>Os filmes mais buscados da semana</p>
+            </div>
+
+            <div class="lista-filmes">
+
+                <article class="card-filme" data-categoria="acao">
+
+                    <img src="imagens/img1.jpeg"
+                         alt="Pôster do filme Missão Impossível">
+
+                    <div class="informacoes-filme">
+                        <h3>Missão Impossível: Efeito Fallout</h3>
+                        <p>★★★★★ | 7.7 | 2018 | Ação</p>
+                        <span>Diárias a partir de</span>
+                        <strong>R$ 300</strong>
+                    </div>
+
+                </article>
+
+
+                <article class="card-filme" data-categoria="acao">
+
+                    <img src="imagens/img3.jpeg"
+                         alt="Pôster do filme Pearl Harbor">
+
+                    <div class="informacoes-filme">
+                        <h3>Pearl Harbor</h3>
+                        <p>★★★★★ | 6.3 | 2001 | Ação</p>
+                        <span>Diárias a partir de</span>
+                        <strong>R$ 150</strong>
+                    </div>
+
+                </article>
+
+
+                <article class="card-filme" data-categoria="animacao">
+
+                    <img src="imagens/img2.jpeg"
+                         alt="Pôster do filme Minions e Monstros">
+
+                    <div class="informacoes-filme">
+                        <h3>Minions e Monstros</h3>
+                        <p>★★★★★ | 6.7 | 2026 | Animação</p>
+                        <span>Diárias a partir de</span>
+                        <strong>R$ 670</strong>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIAS -->
+        <section id="categorias">
+
+            <section class="categoria">
+
+                <div class="titulo-categoria">
+                    <h2>Romance</h2>
+                    <p>Para assistir ao ladinho do crush!</p>
+                </div>
+
+                <div class="lista-filmes">
+
+                    <article class="card-filme">
+                        <img src="imagens/img8.jpeg" alt="Filme de romance">
+                        <div class="informacoes-filme">
+                            <h3>Crepúsculo: Amanhecer</h3>
+                            <p>★★★★★ | 5.0 | 2011 | Romance</p>
+                            <span>Diárias a partir de</span>
+                            <strong>R$ 400</strong>
+                        </div>
+                    </article>
+
+                    <article class="card-filme">
+                        <img src="imagens/img9.jpeg" alt="Filme de romance">
+                        <div class="informacoes-filme">
+                            <h3>Diário De Uma Paixão</h3>
+                            <p>★★★★★ | 7.4 | 2016 | Romance</p>
+                            <span>Diárias a partir de</span>
+                            <strong>R$ 150</strong>
+                        </div>
+                    </article>
+
+                    <article class="card-filme">
+                        <img src="imagens/img10.jpeg" alt="Filme de romance">
+                        <div class="informacoes-filme">
+                            <h3>As Pontes De Madison</h3>
+                            <p>★★★★★ | 7.6 | 1995 | Romance</p>
+                            <span>Diárias a partir de</span>
+                            <strong>R$ 100</strong>
+                        </div>
+                    </article>
+
+                    <article class="card-filme">
+                        <img src="imagens/img11.jpeg" alt="Filme de romance">
+                        <div class="informacoes-filme">
+                            <h3>Como Eu Era Antes De Você</h3>
+                            <p>★★★★★ | 7.4 | 2016 | Romance</p>
+                            <span>Diárias a partir de</span>
+                            <strong>R$ 210</strong>
+                        </div>
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <section class="categoria">
+
+                <div class="titulo-categoria">
+                    <h2>Animação</h2>
+                    <p>Para soltar a imaginar e se divertir!</p>
+                </div>
+
+                <div class="lista-filmes">
+
+                    <article class="card-filme">
+                        <img src="imagens/img4.jpeg" alt="Filme de animação">
+                        <div class="informacoes-filme">
+                            <h3>Meu Malvado Favorito 1</h3>
+                            <p>★★★★★ | 7.6 | 2013 | Animação</p>
+                            <span>Diárias a partir de</span>
+                            <strong>R$ 150</strong>
+                        </div>
+                    </article>
+
+                    <article class="card-filme">
+                        <img src="imagens/img5.jpeg" alt="Filme de animação">
+                        <div class="informacoes-filme">
+                            <h3>Meu Malvado Favorito 2</h3>
+                            <p>★★★★★ | 7.3 | 2013 | Animação</p>
+                            <span>Diárias a partir de</span>
+                            <strong>R$ 260</strong>
+                        </div>
+                    </article>
+
+                    <article class="card-filme">
+                        <img src="imagens/img6.jpeg" alt="Filme de animação">
+                        <div class="informacoes-filme">
+                            <h3>Meu Malvado Favorito 3</h3>
+                            <p>★★★★★ | 6.3 | 2017 | Animação</p>
+                            <span>Diárias a partir de</span>
+                            <strong>R$ 320</strong>
+                        </div>
+                    </article>
+
+                    <article class="card-filme">
+                        <img src="imagens/img7.jpeg" alt="Filme de animação">
+                        <div class="informacoes-filme">
+                            <h3>Meu Malvado Favorito 4</h3>
+                            <p>★★★★★ | 6.2 | 2024 | Animação</p>
+                            <span>Diárias a partir de</span>
+                            <strong>R$ 400</strong>
+                        </div>
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <section class="categoria">
+
+                <div class="titulo-categoria">
+                    <h2>Ação</h2>
+                    <p>Para entrar em uma aventura perigosa!</p>
+                </div>
+
+                <div class="lista-filmes">
+
+                    <article class="card-filme">
+                        <img src="imagens/img12.jpeg" alt="Filme de ação">
+                        <div class="informacoes-filme">
+                            <h3>John Wick: De Volta Ao Jogo</h3>
+                            <p>★★★★★ | 7.5 | 2014 | Ação</p>
+                            <span>Diárias a partir de</span>
+                            <strong>R$ 150</strong>
+                        </div>
+                    </article>
+
+                    <article class="card-filme">
+    <img src="imagens/img13.jpeg" alt="Filme de ação">
+    <div class="informacoes-filme">
+        <h3>O Exterminador do Futuro</h3>
+        <p>★★★★★ | 8.1 | 1984 | Ação</p>
+        <span>Diárias a partir de</span>
+        <strong>R$ 260</strong>
+    </div>
+</article>
+
+<article class="card-filme">
+    <img src="imagens/img14.jpeg" alt="Filme de ação">
+    <div class="informacoes-filme">
+        <h3>Godzilla vs Kong</h3>
+        <p>★★★★★ | 6.3 | 2021 | Ação</p>
+        <span>Diárias a partir de</span>
+        <strong>R$ 320</strong>
+    </div>
+</article>
+
+<article class="card-filme">
+    <img src="imagens/img15.jpeg" alt="Filme de ação">
+    <div class="informacoes-filme">
+        <h3>Street Fighter: A Última Batalha</h3>
+        <p>★★★★★ | 3.8 | 1994 | Ação</p>
+        <span>Diárias a partir de</span>
+        <strong>R$ 400</strong>
+    </div>
+</article>
+
+                </div>
+
+            </section>
+
+
+            <section class="categoria">
+
+                <div class="titulo-categoria">
+                    <h2>Terror</h2>
+                    <p>Para se esconder embaixo das cobertas!</p>
+                </div>
+
+                <div class="lista-filmes">
+
+                   <article class="card-filme">
+    <img src="imagens/img16.jpeg" alt="Filme de terror">
+    <div class="informacoes-filme">
+        <h3>Annabelle 2: A Criação do Mal</h3>
+        <p>★★★★★ | 6.5 | 2017 | Terror</p>
+        <span>Diárias a partir de</span>
+        <strong>R$ 150</strong>
+    </div>
+</article>
+
+<article class="card-filme">
+    <img src="imagens/img17.jpeg" alt="Filme de terror">
+    <div class="informacoes-filme">
+        <h3>Brinquedo Assassino</h3>
+        <p>★★★★★ | 6.6 | 1988 | Terror</p>
+        <span>Diárias a partir de</span>
+        <strong>R$ 260</strong>
+    </div>
+</article>
+
+<article class="card-filme">
+    <img src="imagens/img18.jpeg" alt="Filme de terror">
+    <div class="informacoes-filme">
+        <h3>It: A Coisa</h3>
+        <p>★★★★★ | 7.3 | 2017 | Terror</p>
+        <span>Diárias a partir de</span>
+        <strong>R$ 320</strong>
+    </div>
+</article>
+
+<article class="card-filme">
+    <img src="imagens/img19.jpeg" alt="Filme de terror">
+    <div class="informacoes-filme">
+        <h3>O Chamado</h3>
+        <p>★★★★★ | 7.1 | 2002 | Terror</p>
+        <span>Diárias a partir de</span>
+        <strong>R$ 400</strong>
+    </div>
+</article>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- SOBRE NÓS -->
+        <section class="sobre" id="sobre">
+
+            <div class="sobre-conteudo">
+
+                <h2>Sobre nós</h2>
+
+                <p>
+                    A Filtrip, criada em 2026, é uma empresa de turismo que transforma a magia do cinema em experiências reais! Nosso objetivo é proporcionar viagens diferentes e inesquecíveis, levando nossos clientes a conhecerem lugares que serviram de cenário para filmes e que existem de verdade.
+Mais do que oferecer destinos turísticos, queremos aproximar os fãs de cinema de seus universos favoritos, permitindo que vivenciem de perto os cenários que antes só podiam ver nas telas.
+
+                </p>
+
+            
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTATO -->
+        <section class="contato" id="contato">
+
+            <h2 class="titulo-feedback">
+            <span>Dê seu</span>
+            Feedback
+            </h2>
+
+           
+
+            <form id="formContato">
+
+                <input type="text" id="nome" placeholder="Nome" required>
+
+                <input type="email" id="email" placeholder="seunome@exemplo.com" required>
+
+                <input type="tel" id="telefone" placeholder="(00)00000-0000">
+
+                <textarea id="mensagem" placeholder="Adicione seu comentário: " required></textarea>
+
+                <button type="submit">Enviar mensagem</button>
+
+            </form>
+
+            <p id="mensagemFormulario"></p>
+
+        </section>
 
     </main>
 
-    <footer>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <h2>FILTRIP</h2>
+
+
+
+        <p>© 2026 Filtrip. Todos os direitos reservados.</p>
 
     </footer>
 
 </body>
 </html>
+

@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background-color: #080609;
+    background-color: #19003f;
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -26,6 +26,7 @@ a {
 /* CABEÇALHO */
 
 .cabecalho {
+    position: relative;
     background-color: #19003f;
     padding: 20px 5%;
     display: flex;
@@ -33,12 +34,10 @@ a {
     justify-content: space-between;
     gap: 25px;
 }
-
-.logo {
-    color: #ffd21c;
-    font-size: 30px;
-    font-weight: bold;
-    letter-spacing: 3px;
+.logo img {
+    height: 80px;
+    width: auto;
+    display: block;
 }
 
 .menu {
@@ -50,13 +49,85 @@ a {
 .menu a {
     font-size: 14px;
     transition: 0.3s;
+display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icone {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .menu a:hover {
     color: #ffd21c;
 }
 
+.acoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
+.botao-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 2px solid #ffd21c;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-icone:hover {
+    background-color: #ffd21c;
+}
+
+.botao-icone:hover svg {
+    stroke: #19003f;
+}
+
+/* MENU COM TODAS AS OPÇÕES */
+
+.menu-lateral {
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    width: 240px;
+    background-color: #281052;
+    border: 1px solid #5c3b89;
+    border-radius: 12px;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 100;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.menu-lateral.aberto {
+    display: flex;
+}
+
+.menu-lateral a {
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu-lateral a:hover {
+    background-color: #35166a;
+    color: #ffd21c;
+}
 /* PESQUISA */
 
 .pesquisa {
@@ -71,7 +142,7 @@ a {
     border: none;
     outline: none;
     padding: 10px;
-    width: 150px;
+    width: 300px;
 }
 
 .pesquisa button {
@@ -82,12 +153,36 @@ a {
     font-size: 18px;
 }
 
+.botao-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.botao-icone svg {
+    transition: 0.3s;
+}
+
+.botao-icone:hover svg {
+    stroke: #ffffff;
+}
 
 /* BANNER */
 
 .banner {
     min-height: 380px;
-    background: linear-gradient(90deg, #19003f, #35166a);
+    background-color: #19003f;
+    background-image:
+         linear-gradient(90deg, rgba(25, 0, 63, 0.85), rgba(25, 0, 63, 0.25)),
+        url("imagens/filmedestaque.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 10px solid rgb(255, 210, 28);
     display: flex;
     align-items: center;
     padding: 50px 8%;
@@ -160,7 +255,7 @@ a {
 /* SEÇÃO DE FILMES */
 
 .secao-filmes {
-    padding: 25px 5%;
+    padding: 25px 0%;
 }
 
 .titulo-populares {
@@ -247,11 +342,11 @@ a {
 /* CATEGORIAS */
 
 .categoria {
-    margin-top: 45px;
+    margin-top: 0;
 }
 
 .titulo-categoria {
-    padding: 15px 5%;
+    padding: 35px 2%;
 }
 
 .titulo-categoria h2 {
@@ -273,6 +368,8 @@ a {
 }
 
 .sobre h2 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    text-transform: uppercase;
     color: #ffd21c;
     font-size: 30px;
     margin-bottom: 20px;
@@ -283,6 +380,7 @@ a {
     margin: 12px auto;
     line-height: 1.8;
     color: #eeeeee;
+    text-align: justify;
 }
 
 
@@ -293,10 +391,12 @@ a {
     text-align: center;
 }
 
-.contato h2 {
-    font-size: 30px;
+.rodape h2 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    text-transform: uppercase;
     color: #ffd21c;
-    margin-bottom: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
 }
 
 .contato > p {
@@ -317,7 +417,7 @@ a {
     border: 1px solid #5c3b89;
     border-radius: 8px;
     background-color: #1a1223;
-    color: #ffffff;
+    color: #ffd21c;
     font-family: inherit;
     outline: none;
 }
@@ -361,6 +461,23 @@ a {
     color: #ffd21c;
     letter-spacing: 3px;
     margin-bottom: 10px;
+}
+
+.titulo-feedback {
+    font-family: 'Montserrat', Arial, sans-serif;
+    text-transform: uppercase;
+    color: #ffd21c;
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.titulo-feedback span {
+    display: block;
+    font-size: 16px;
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 2px;
 }
 
 .rodape p {
