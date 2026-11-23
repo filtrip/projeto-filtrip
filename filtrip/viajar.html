@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrip | Brilho Eterno de uma Mente Sem Lembranças</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="viajar.css">
+    <script src="viajar.js" defer></script>
+</head>
+<body>
+
+    <!-- CABEÇALHO (igual ao da página inicial) -->
+    <header class="cabecalho">
+
+        <a href="index.html" class="logo">
+            <img src="imagens/logo.png" alt="Filtrip">
+        </a>
+
+        <nav class="menu">
+            <a href="index.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd21c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                Início
+            </a>
+
+            <a href="#" data-breve>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd21c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+                Voos
+            </a>
+
+            <a href="#hospedagem">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd21c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+                Hospedagens
+            </a>
+
+            <a href="index.html#sobre">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd21c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Sobre Nós
+            </a>
+
+            <a href="index.html#contato">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd21c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                Contato
+            </a>
+        </nav>
+
+        <div class="pesquisa">
+            <input type="text" id="campoPesquisa" placeholder="Pesquise por filmes, locais, hospedagens...">
+            <button id="botaoPesquisa" aria-label="Pesquisar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#19003f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+        </div>
+
+        <div class="acoes">
+
+            <a href="#" data-breve class="botao-icone" aria-label="Meu perfil" title="Meu perfil">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd21c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </a>
+
+            <button type="button" class="botao-icone" id="botaoMenu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuLateral">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd21c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+            </button>
+
+        </div>
+
+        <div class="menu-lateral" id="menuLateral">
+            <a href="index.html">Início</a>
+            <a href="#" data-breve>Voos</a>
+            <a href="#hospedagem">Hospedagens</a>
+            <a href="index.html#sobre">Sobre Nós</a>
+            <a href="index.html#contato">Contato</a>
+            <a href="#" data-breve>Meu perfil</a>
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="migalha">
+            <a href="index.html">
+                <svg class="i" width="14" height="14" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                Voltar ao início
+            </a>
+            <span>/</span>
+            <span>Explore as locações</span>
+        </div>
+
+        <!-- BANNER DO FILME (mesmo estilo da página inicial) -->
+        <section class="banner">
+
+            <div class="banner-conteudo">
+
+                <span class="destaque">DESTAQUE</span>
+
+                <h1>BRILHO ETERNO DE UMA MENTE SEM LEMBRANÇAS</h1>
+
+                <p class="meta"><b>★ 8.3</b> · 2004 · Michel Gondry · EUA</p>
+
+                <p>
+                    Joel (Jim Carrey) descobre que sua ex, Clementine (Kate Winslet), apagou todas as memórias dele e decide fazer o mesmo. Durante o procedimento, revive o relacionamento de trás para frente, da gelada praia de Montauk à livraria da Union Square, e percebe que ainda a ama.
+                </p>
+
+                <a href="#" class="botao-principal" data-breve>Onde assistir →</a>
+                <button type="button" class="botao-principal botao-contorno" id="botaoLista">+ Minha lista</button>
+
+            </div>
+
+        </section>
+
+        <div class="etapas">
+            <a href="#locacoes"><b>01</b> Explore as locações</a>
+            <a href="#hospedagem"><b>02</b> Encontre onde ficar</a>
+            <a href="#planejar"><b>03</b> Planeje sua viagem</a>
+        </div>
+
+        <!-- LOCAÇÕES -->
+        <section class="sec" id="locacoes">
+            <div class="wrap">
+                <span class="eyebrow">Da tela para o mundo</span>
+                <h2>Qual cena vai fazer parte da sua viagem?</h2>
+                <p class="sub">Da praia de Montauk à livraria de Union Square: escolha por onde começar a sua própria história.</p>
+
+                <div class="cartoes" id="cartoes" role="radiogroup" aria-label="Locações do filme"></div>
+
+                <div class="linha">
+                    <div>
+                        <span class="eyebrow">Onde foi filmado</span>
+                        <h3 class="titulo-cena" id="tituloCena"></h3>
+                    </div>
+                    <span class="sub">Cena do filme × local atual</span>
+                </div>
+
+                <div class="grade-cena">
+                    <figure>
+                        <div class="midia" data-rotulo="Foto: cena do filme">
+                            <span class="selo">Cena do filme</span>
+                            <img id="imgCena" alt="Cena do filme" onerror="this.style.display='none'" onload="this.style.display=''">
+                        </div>
+                        <figcaption id="legCena"></figcaption>
+                    </figure>
+                    <figure>
+                        <div class="midia" data-rotulo="Foto: local hoje">
+                            <span class="selo" id="seloHoje"></span>
+                            <img id="imgHoje" alt="Local hoje" onerror="this.style.display='none'" onload="this.style.display=''">
+                        </div>
+                        <figcaption id="legHoje"></figcaption>
+                    </figure>
+                    <figure>
+                        <div class="midia" data-rotulo="Mapa">
+                            <iframe id="mapa" title="Mapa da locação" loading="lazy"></iframe>
+                        </div>
+                        <figcaption id="legMapa"></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOSPEDAGENS -->
+        <section class="sec sec-claro" id="hospedagem">
+            <div class="wrap">
+                <span class="eyebrow">Hospedagem perto da locação</span>
+                <h2>Encontre onde ficar, perto da sua história.</h2>
+                <p class="sub">Explore as hospedagens de cada locação antes de planejar a viagem.</p>
+
+                <div id="hoteis"></div>
+                <p class="sub" id="semResultado" hidden>Nenhuma hospedagem encontrada para essa busca.</p>
+            </div>
+        </section>
+
+        <!-- PRÓXIMO PASSO -->
+        <section class="sec" id="planejar">
+            <div class="wrap">
+                <div class="cta">
+                    <div>
+                        <span class="eyebrow">O próximo capítulo é seu</span>
+                        <h2>Leve essa cena para a sua vida.</h2>
+                        <p class="sub">Comece pela locação escolhida. Depois, defina as datas e consulte voos, hospedagem e seguros para montar sua viagem.</p>
+                    </div>
+                    <div class="cta-dir">
+                        Sua locação selecionada
+                        <strong id="ctaLocal"></strong>
+                        <button type="button" class="botao-principal" id="botaoPlanejar">Planejar minha viagem →</button>
+                        <small>Você ainda não está fazendo uma reserva.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <h2>FILTRIP</h2>
+
+        <p>© 2026 Filtrip. Todos os direitos reservados.</p>
+
+    </footer>
+
+    <div class="aviso" id="aviso" role="status"></div>
+
+</body>
+</html>
